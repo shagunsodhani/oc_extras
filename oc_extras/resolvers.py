@@ -1,5 +1,3 @@
-from tkinter import N
-
 from omegaconf import OmegaConf
 
 from oc_extras.utils import utils
