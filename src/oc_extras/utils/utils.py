@@ -27,9 +27,9 @@ def has_uncommitted_changes() -> bool:
     Returns:
         bool: wether there are uncommiteed changes.
     """
-    command = "git status"
+    command = "git status --porcelain"
     output = subprocess.check_output(command.split()).strip().decode("utf-8")
-    return "nothing to commit (working directory clean)" not in output
+    return len(output) > 0
 
 
 def get_current_time() -> str:
